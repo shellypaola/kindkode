@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KindKode | Personal Product Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+body { background-color: #fdfdfd; color: #111; line-height: 1.6; }
+
+header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; background-color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+header .logo { font-weight: 700; font-size: 1.5rem; color: #ff6f61; }
+
+.hero { text-align: center; padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #ff6f61 0%, #ffb07c 100%); color: #fff; position: relative; overflow: hidden; }
+.hero::after { content: ""; position: absolute; bottom: -120px; left: 50%; transform: translateX(-50%); width: 420px; height: 420px; background: rgba(255,255,255,0.15); border-radius: 50%; }
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+.hero p { font-size: 1.25rem; max-width: 720px; margin: 0 auto 1rem; position: relative; z-index: 1; }
+.hero .subtle { font-size: 1rem; opacity: 0.9; position: relative; z-index: 1; }
+
+section { padding: 4rem 2rem; }
+section:not(.hero) { max-width: 1200px; margin: 0 auto; }
+section h2 { text-align: center; margin-bottom: 1.5rem; font-size: 2rem; }
+section p { color: #555; }
+
+.featured { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center; }
+.status { display: inline-block; margin-bottom: 1rem; font-size: 0.85rem; color: #ff6f61; font-weight: 600; }
+.featured ul { margin: 1rem 0 1.5rem 1.2rem; color: #555; }
+.featured-images { display: flex; gap: 1.5rem; justify-content: center; }
+.featured-images img { max-width: 160px; border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+
+.about { background-color: #f9f9f9; text-align: center; }
+.about p { max-width: 750px; margin: 1rem auto 0; font-size: 1.05rem; }
+
+.contact { text-align: center; }
+.contact a { color: #ff6f61; text-decoration: none; font-weight: 500; }
+
+footer { padding: 2rem; text-align: center; background-color: #fff; border-top: 1px solid #eee; color: #555; }
+footer a { color: #555; text-decoration: none; }
+
+@media(max-width:768px){ .hero h1 { font-size: 2.25rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">KindKode</div>
+</header>
+
+<section class="hero">
+  <h1>KindKode</h1>
+  <p><strong>Building small apps that help people — and give back.</strong></p>
+  <p class="subtle">Helping the world become a better place, one app at a time.</p>
+</section>
+
+<section>
+  <h2>Current project</h2>
+  <div class="featured">
+    <div>
+      <span class="status">In active development</span>
+      <h3>WasteWarrior</h3>
+      <p>WasteWarrior is an app designed to help people reduce household food waste through awareness, visibility, and better everyday habits.</p>
+      <ul>
+        <li>Track food inventory and expiry</li>
+        <li>Understand waste patterns over time</li>
+        <li>Encourage more sustainable choices</li>
+      </ul>
+      <p>When launched, a portion of premium features will support food banks and food-rescue organisations.</p>
+      <p style="margin-top:1rem;"><a href="/waste-warrior" style="color:#ff6f61; font-weight:600;">Learn more about Waste Warrior →</a></p>
+    </div>
+    <div class="featured-images">
+      <img src="./waste-warrior/logo.png" alt="Waste Warrior app icon">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About KindKode</h2>
+  <p>KindKode is a personal product studio where I design and build small, purpose-driven apps. Each project starts as a simple idea and grows through curiosity, iteration, and care. The goal is always the same: build something genuinely useful, respectful of people's attention, and capable of doing some good beyond the screen.</p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Say hello</h2>
+  <p>If you have feedback, questions, or curiosity about any of the projects here, feel free to reach out.</p>
+  <p style="margin-top:0.75rem;"><a href="mailto:kindkodeau@gmail.com">kindkodeau@gmail.com</a></p>
+</section>
+
+<footer>
+  © 2026 KindKode — Built with care. &nbsp;·&nbsp;
+  <a href="/waste-warrior/terms">Terms</a> &nbsp;·&nbsp;
+  <a href="/waste-warrior/privacy">Privacy</a>
+</footer>
+
+</body>
+</html>

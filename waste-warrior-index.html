@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waste Warrior | KindKode</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+body { background-color: #fdfdfd; color: #111; line-height: 1.6; }
+
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem 2rem; background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;
+}
+.logo { font-weight: 700; font-size: 1.5rem; color: #ff6f61; text-decoration: none; }
+nav a { margin-left: 2rem; text-decoration: none; color: #111; font-weight: 500; transition: color 0.3s; }
+nav a:hover { color: #3B82F6; }
+
+.hero {
+  text-align: center; padding: 5rem 2rem;
+  background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%); color: #fff;
+}
+.hero-icon { font-size: 4rem; margin-bottom: 1rem; }
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; opacity: 0.95; }
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn { padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; font-size: 0.95rem; }
+.btn-white { background: #fff; color: #3B82F6; }
+.btn-white:hover { background: #EFF6FF; transform: translateY(-2px); }
+.btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); }
+.btn-outline:hover { border-color: #fff; transform: translateY(-2px); }
+
+.features { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.features h2 { text-align: center; font-size: 2rem; margin-bottom: 0.75rem; }
+.features .sub { text-align: center; color: #666; margin-bottom: 3rem; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.feature-card {
+  background: #fff; border-radius: 12px; padding: 1.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #F3F4F6;
+}
+.feature-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: #111; }
+.feature-card p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+
+.mission { padding: 4rem 2rem; background: #F0FDF4; text-align: center; }
+.mission h2 { font-size: 2rem; margin-bottom: 1rem; color: #065F46; }
+.mission p { max-width: 650px; margin: 0 auto; color: #374151; font-size: 1.05rem; line-height: 1.8; }
+
+.pricing { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+.pricing h2 { text-align: center; font-size: 2rem; margin-bottom: 0.75rem; }
+.pricing .sub { text-align: center; color: #666; margin-bottom: 3rem; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.price-card {
+  background: #fff; border-radius: 16px; padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 2px solid #E5E7EB; text-align: center;
+}
+.price-card.featured { border-color: #3B82F6; }
+.price-badge { display: inline-block; background: #3B82F6; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px; margin-bottom: 1rem; }
+.price-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.price { font-size: 2rem; font-weight: 700; color: #111; margin: 0.75rem 0; }
+.price span { font-size: 1rem; font-weight: 400; color: #666; }
+.price-card ul { list-style: none; margin: 1rem 0; text-align: left; }
+.price-card ul li { font-size: 0.9rem; color: #555; padding: 0.3rem 0; }
+.price-card ul li::before { content: "✓ "; color: #10B981; font-weight: 700; }
+
+.screenshots { padding: 4rem 2rem; background: #F9FAFB; text-align: center; }
+.screenshots h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+.screenshots .sub { color: #666; margin-bottom: 2.5rem; }
+.screenshot-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.screenshot-row img { max-width: 200px; border-radius: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+
+.legal { padding: 3rem 2rem; max-width: 600px; margin: 0 auto; text-align: center; }
+.legal h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+.legal p { color: #666; margin-bottom: 1.5rem; font-size: 0.95rem; }
+.legal-links { display: flex; gap: 1rem; justify-content: center; }
+.legal-links a { padding: 0.6rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; background: #EFF6FF; color: #3B82F6; border: 1px solid #BFDBFE; transition: all 0.2s; }
+.legal-links a:hover { background: #DBEAFE; transform: translateY(-1px); }
+
+footer {
+  padding: 2rem; text-align: center; background-color: #fff;
+  color: #888; border-top: 1px solid #eee; font-size: 0.9rem;
+}
+footer a { color: #888; text-decoration: none; margin: 0 0.5rem; }
+footer a:hover { color: #3B82F6; }
+
+@media(max-width: 768px) {
+  .hero h1 { font-size: 2.25rem; }
+  nav a { margin-left: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">KindKode</a>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#legal">Legal</a>
+    <a href="mailto:kindkodeau@gmail.com">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-icon">
+    <img src="./logo.png" alt="Waste Warrior Logo" style="width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+  </div>
+  <h1>Waste Warrior</h1>
+  <p>Track your food, reduce waste, save money — and help feed families in need.</p>
+  <div class="hero-buttons">
+    <a href="#" class="btn btn-white">Download on App Store</a>
+    <a href="#" class="btn btn-outline">Get it on Google Play</a>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <h2>Everything you need to stop wasting food</h2>
+  <p class="sub">Simple tools that make a real difference.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📦</div>
+      <h3>Smart Inventory</h3>
+      <p>Track everything in your fridge, freezer, and pantry. Know exactly what you have and when it expires.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>Barcode Scanning</h3>
+      <p>Add items instantly by scanning barcodes. No more typing product names manually.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⏰</div>
+      <h3>Expiry Alerts</h3>
+      <p>Get notified before food expires so you can use it in time — not throw it away.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Waste Analytics</h3>
+      <p>See exactly how much food — and money — you're wasting each month. Knowledge drives change.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🏆</div>
+      <h3>Gamification</h3>
+      <p>Earn achievements, build streaks, and level up as you reduce your waste. Behaviour change made fun.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💚</div>
+      <h3>Charitable Impact</h3>
+      <p>A portion of every premium subscription goes toward fighting food insecurity around the world.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mission">
+  <h2>More than an app</h2>
+  <p>The average household throws away over $1,500 worth of food every year. Waste Warrior helps you see that waste clearly — and do something about it. A portion of our profits goes to organisations fighting food insecurity globally. We publish an annual report so you always know the impact your subscription is making.</p>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Simple, honest pricing</h2>
+  <p class="sub">Start free. Upgrade when you're ready. Cancel anytime.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Free</h3>
+      <div class="price">$0 <span>forever</span></div>
+      <ul>
+        <li>Up to 50 inventory items</li>
+        <li>25 barcode scans per day</li>
+        <li>Expiry alerts</li>
+        <li>Basic analytics</li>
+        <li>Gamification & achievements</li>
+      </ul>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge">Most Popular</div>
+      <h3>Premium</h3>
+      <div class="price">$2.99 <span>/month</span></div>
+      <ul>
+        <li>Unlimited inventory items</li>
+        <li>Unlimited barcode scans</li>
+        <li>Advanced analytics</li>
+        <li>All gamification features</li>
+        <li>Priority support</li>
+        <li>Charitable impact contribution</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Premium Annual</h3>
+      <div class="price">$24.99 <span>/year</span></div>
+      <ul>
+        <li>Everything in Premium</li>
+        <li>Save 30% vs monthly</li>
+        <li>Larger charitable contribution</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="screenshots">
+  <h2>See it in action</h2>
+  <p class="sub">Screenshots coming soon.</p>
+  <div class="screenshot-row">
+    <!-- Add screenshots here once app is finalised -->
+    <!-- <img src="../wastewarrior-screen-1.png" alt="Dashboard"> -->
+    <!-- <img src="../wastewarrior-screen-2.png" alt="Inventory"> -->
+    <!-- <img src="../wastewarrior-screen-3.png" alt="Analytics"> -->
+  </div>
+</section>
+
+<section class="legal" id="legal">
+  <h2>Legal</h2>
+  <p>Please read our Terms of Service and Privacy Policy before using Waste Warrior.</p>
+  <div class="legal-links">
+    <a href="/waste-warrior/terms">Terms of Service</a>
+    <a href="/waste-warrior/privacy">Privacy Policy</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 KindKode &nbsp;·&nbsp;
+  <a href="/">KindKode.com</a> &nbsp;·&nbsp;
+  <a href="/waste-warrior/terms">Terms</a> &nbsp;·&nbsp;
+  <a href="/waste-warrior/privacy">Privacy</a> &nbsp;·&nbsp;
+  <a href="mailto:kindkodeau@gmail.com">Contact</a>
+</footer>
+
+</body>
+</html>
